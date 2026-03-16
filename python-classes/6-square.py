@@ -10,7 +10,8 @@ class Square:
 
         Args:
             size (int): The size of the square. Defaults to 0.
-            position (tuple): A tuple of 2 positive integers. Defaults to (0, 0).
+            position (tuple): A tuple of 2 positive integers.
+                Defaults to (0, 0).
         """
         self.size = size
         self.position = position
