@@ -1,0 +1,42 @@
+>>> MyList = __import__('1-my_list').MyList
+
+# Test basic sorted print
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+# Original list is unchanged
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+# Empty list
+>>> empty = MyList()
+>>> empty.print_sorted()
+[]
+
+# Already sorted
+>>> sorted_list = MyList()
+>>> sorted_list.append(1)
+>>> sorted_list.append(2)
+>>> sorted_list.append(3)
+>>> sorted_list.print_sorted()
+[1, 2, 3]
+
+# Negative numbers
+>>> neg_list = MyList()
+>>> neg_list.append(-3)
+>>> neg_list.append(0)
+>>> neg_list.append(-1)
+>>> neg_list.print_sorted()
+[-3, -1, 0]
+
+# Single element
+>>> one = MyList()
+>>> one.append(42)
+>>> one.print_sorted()
+[42]
