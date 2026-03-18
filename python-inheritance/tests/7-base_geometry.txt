@@ -10,16 +10,16 @@ Traceback (most recent call last):
 Exception: area() is not implemented
 
 # No arguments raises TypeError
->>> bg.integer_validator()
+>>> bg.integer_validator() # doctest: +ELLIPSIS
 Traceback (most recent call last):
     ...
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+TypeError: ...integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 # Missing value argument raises TypeError
->>> bg.integer_validator("age")
+>>> bg.integer_validator("age") # doctest: +ELLIPSIS
 Traceback (most recent call last):
     ...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+TypeError: ...integer_validator() missing 1 required positional argument: 'value'
 
 # Valid integer passes silently
 >>> bg.integer_validator("age", 1)
