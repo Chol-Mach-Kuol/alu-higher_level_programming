@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Unittest for Square class."""
 import unittest
+import os
 from io import StringIO
 from unittest.mock import patch
 from models.base import Base
@@ -138,6 +139,43 @@ class TestSquare(unittest.TestCase):
         """Test TypeError for bool size."""
         with self.assertRaises(TypeError):
             Square(True)
+
+    def test_save_to_file_none(self):
+        """Test save_to_file with None."""
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+        os.remove("Square.json")
+
+    def test_save_to_file_empty(self):
+        """Test save_to_file with empty list."""
+        Square.save_to_file([])
+        with open("Square.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+        os.remove("Square.json")
+
+    def test_save_to_file_one_square(self):
+        """Test save_to_file with one Square."""
+        Square.save_to_file([Square(1)])
+        with open("Square.json", "r") as f:
+            self.assertIn("1", f.read())
+        os.remove("Square.json")
+
+    def test_load_from_file_no_file(self):
+        """Test load_from_file when file doesn't exist."""
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+        result = Square.load_from_file()
+        self.assertEqual(result, [])
+
+    def test_load_from_file_exists(self):
+        """Test load_from_file when file exists."""
+        s = Square(5, 1, 2, 3)
+        Square.save_to_file([s])
+        result = Square.load_from_file()
+        self.assertEqual(len(result), 1)
+        self.assertEqual(str(result[0]), str(s))
+        os.remove("Square.json")
 
 
 if __name__ == '__main__':
