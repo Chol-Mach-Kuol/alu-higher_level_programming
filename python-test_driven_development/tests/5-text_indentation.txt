@@ -68,3 +68,9 @@ text must be a string
 ... except TypeError as e:
 ...     print(e)
 text must be a string
+
+>>> try:
+...     text_indentation()
+... except TypeError as e:
+...     print(e)
+text_indentation() missing 1 required positional argument: 'text'
