@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Fetches https://alx-intranet.hbtn.io/status using urllib"""
+"""Fetches a URL and displays the body response using urllib"""
 import urllib.request
 
 if __name__ == "__main__":
