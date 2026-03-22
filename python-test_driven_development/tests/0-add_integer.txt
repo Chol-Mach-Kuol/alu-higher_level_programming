@@ -1,0 +1,82 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(2)
+100
+
+>>> add_integer(100.3, -2)
+98
+
+>>> add_integer(0, 0)
+0
+
+>>> add_integer(-5, -3)
+-8
+
+>>> add_integer(1.9, 2.9)
+3
+
+>>> add_integer(0)
+98
+
+>>> add_integer(-10)
+88
+
+>>> add_integer(1.5, 1.5)
+2
+
+>>> add_integer(100.9, 0.9)
+100
+
+>>> try:
+...     add_integer(4, "School")
+... except TypeError as e:
+...     print(e)
+b must be an integer
+
+>>> try:
+...     add_integer(None)
+... except TypeError as e:
+...     print(e)
+a must be an integer
+
+>>> try:
+...     add_integer("hello", 2)
+... except TypeError as e:
+...     print(e)
+a must be an integer
+
+>>> try:
+...     add_integer(1, None)
+... except TypeError as e:
+...     print(e)
+b must be an integer
+
+>>> try:
+...     add_integer([1], 2)
+... except TypeError as e:
+...     print(e)
+a must be an integer
+
+>>> try:
+...     add_integer(1, [2])
+... except TypeError as e:
+...     print(e)
+b must be an integer
+
+>>> try:
+...     add_integer((1,), 2)
+... except TypeError as e:
+...     print(e)
+a must be an integer
+
+>>> try:
+...     add_integer(True, 2)
+... except Exception as e:
+...     print(e)
+3

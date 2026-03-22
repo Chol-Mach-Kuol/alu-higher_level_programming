@@ -1,5 +1,6 @@
 # SQL - More queries
 
+<<<<<<< HEAD
 This project focuses on advanced MySQL queries, user management, and database privileges.
 
 ## Learning Objectives
@@ -24,3 +25,6 @@ This project focuses on advanced MySQL queries, user management, and database pr
 
 0. **My privileges!** - Lists all privileges of MySQL users user_0d_1 and user_0d_2
 1. **Root user** - Creates MySQL server user user_0d_1 with all privileges
+=======
+This project covers MySQL user management, privileges, constraints, joins, subqueries, and more advanced SQL techniques.
+>>>>>>> f4ac4969c5b6388e66bd1d29b708b0c5260cbb7c
