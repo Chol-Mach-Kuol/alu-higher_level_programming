@@ -9,6 +9,15 @@
 >>> matrix_divided([[1.5, 2.5], [3.5, 4.5]], 2)
 [[0.75, 1.25], [1.75, 2.25]]
 
+>>> matrix_divided([[1, 2], [3, 4]], 1)
+[[1.0, 2.0], [3.0, 4.0]]
+
+>>> matrix_divided([[-1, -2], [-3, -4]], 2)
+[[-0.5, -1.0], [-1.5, -2.0]]
+
+>>> matrix_divided([[1, 2], [3, 4]], 3.0)
+[[0.33, 0.67], [1.0, 1.33]]
+
 >>> try:
 ...     matrix_divided([[1, 2], [3, 4]], 0)
 ... except ZeroDivisionError as e:
@@ -44,3 +53,21 @@ matrix must be a matrix (list of lists) of integers/floats
 ... except TypeError as e:
 ...     print(e)
 div must be a number
+
+>>> try:
+...     matrix_divided(None, 2)
+... except TypeError as e:
+...     print(e)
+matrix must be a matrix (list of lists) of integers/floats
+
+>>> try:
+...     matrix_divided([1, 2, 3], 2)
+... except TypeError as e:
+...     print(e)
+matrix must be a matrix (list of lists) of integers/floats
+
+>>> try:
+...     matrix_divided([[1, 2], [3, 4]], 0.0)
+... except ZeroDivisionError as e:
+...     print(e)
+division by zero

@@ -20,6 +20,37 @@ World
 >>> text_indentation("No special chars")
 No special chars
 
+>>> text_indentation("Hello.   World.")
+Hello.
+<BLANKLINE>
+World.
+<BLANKLINE>
+
+>>> text_indentation("Hello. World? Test:")
+Hello.
+<BLANKLINE>
+World?
+<BLANKLINE>
+Test:
+<BLANKLINE>
+
+>>> text_indentation("...")
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+
+>>> text_indentation("a.b?c:d")
+a.
+<BLANKLINE>
+b?
+<BLANKLINE>
+c:
+<BLANKLINE>
+d
+
 >>> try:
 ...     text_indentation(123)
 ... except TypeError as e:
@@ -32,5 +63,8 @@ text must be a string
 ...     print(e)
 text must be a string
 
->>> text_indentation("   spaces   ")
-   spaces   
+>>> try:
+...     text_indentation(['hello'])
+... except TypeError as e:
+...     print(e)
+text must be a string

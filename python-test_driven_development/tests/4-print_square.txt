@@ -11,6 +11,22 @@
 
 >>> print_square(0)
 
+>>> print_square(2)
+##
+##
+
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
 >>> try:
 ...     print_square(-1)
 ... except ValueError as e:
@@ -40,3 +56,15 @@ size must be an integer
 ... except TypeError as e:
 ...     print(e)
 size must be an integer
+
+>>> try:
+...     print_square([4])
+... except TypeError as e:
+...     print(e)
+size must be an integer
+
+>>> try:
+...     print_square(-2)
+... except ValueError as e:
+...     print(e)
+size must be >= 0
