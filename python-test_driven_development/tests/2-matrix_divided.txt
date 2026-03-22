@@ -18,6 +18,22 @@
 >>> matrix_divided([[1, 2], [3, 4]], 3.0)
 [[0.33, 0.67], [1.0, 1.33]]
 
+>>> import math
+>>> matrix_divided([[1, 2], [3, 4]], float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
+
+>>> try:
+...     matrix_divided([[1, 2], [3, 4]])
+... except TypeError as e:
+...     print(e)
+matrix_divided() missing 1 required positional argument: 'div'
+
+>>> try:
+...     matrix_divided()
+... except TypeError as e:
+...     print(e)
+matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
 >>> try:
 ...     matrix_divided([[1, 2], [3, 4]], 0)
 ... except ZeroDivisionError as e:
